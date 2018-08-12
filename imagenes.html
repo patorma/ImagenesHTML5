@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        img{
+            max-width: 100%;/*el ancho máximo de la imagen sera el 100% de su contenedor*/
+        }
+        body{
+            padding-bottom: 25em;/*para tener la parte inferior del documento casi al centro de la
+            pantalla*/
+        }
+        figure{
+            background: #eee;
+            padding: 1em;
+        }
+        figure img {
+            width: 49%;
+        }
+    </style>
     <title>Imágenes en HTML</title>
 </head>
 <body>
@@ -18,13 +34,87 @@
                 *png, formato sin pérdida, admite transpariencias y es
                 ideal para logos, capturas de pantalla e imágenes con mucho color
                 sólido.
-                *gif
+                *gif, es un formato con poca profundidad de color (256),admite 
+                transparencias y animaciones.
+
             
 
             * Vectoriales, son códigos xml que el navegador
             interpreta al vuelo (en la marcha) no tienen pixeles.
                 *svg
                         -->
+     <ul>
+         <li>Imágenes Render
+             <ul>
+                 <li>.jpg</li>
+                 <li>.png</li>
+                 <li>.gif</li>
+             </ul>
+         </li>
+         <li>Imágenes Vectoriales
+             <ul>
+                 <li>.svg</li>
+             </ul>
+         </li>
+     </ul>
+    </section>
+    <section>
+        <h2>Etiquetas img</h2>
+        <!--La etiqueta <img src="" alt="">
+        Requiere dos atributos::
+        src="" (indica la ruta de la imagen)
+        alt="" (indica un texto alternativo para las ocasiones
+        en las que la imagen no se muestre, para los motores de búsqueda y
+        para los lectores de pantalla).        -->
+        <img src="mujer-small.jpg" alt="Mujer con lentes oscuros">
+        <img src="circulo.png" alt="Circulo rojo">
+        <img src="logo.svg" alt="Logo de Sass">
+    </section>
+
+    <section>
+        <h2>Comprimir imágenes para web</h2>
+        <!--
+            Antes de comprimir, debes redimensionar la
+            imagen a la resolución que se necesite.
+
+            Las imágenes para web deben ser 72ppp.
+
+            El formato jpg admite compresiones
+            de 0% a 100%.
+            El formato png se comprime en png8 (256 colores)
+
+        -->
+        <a href="https://tinypng.com" target="_blank">Tiny PNG</a>
+    </section>
+    <section>
+        <h2>Los elementos figure y figcaption de HTML5</h2>
+        <!--<figure></figure> sirve para encerrar elementos multimedia como
+        imágenes y video acompañados de una leyenda con el elemento
+        <figcaption></figcaption> (son etiquetas de bloque)
+        Ejemplo:
+                <figure>
+                        <img src="" alt="">
+                        <figcaption>
+
+                        </figcaption>
+                    </figure>-->
+
+            <figure>
+                <img src="mujer-small.jpg" alt="Mujer con lentes oscuros">
+                <img src="juguete2.jpg" alt="Oveja de peluche">
+                <figcaption>
+                    Mujer con lentes oscuros y oveja de peluche.
+                    Fuente: <a href="https://www.pexels.com/">Pexels</a>
+                </figcaption>
+            </figure>
+    </section>
+    <section>
+        <h2>Elemento picture de HTML5</h2>
+        <picture>
+            <source srcset="juguete.jpg" media="(min-width:1000px)">
+            <source srcset="hombre.jpg" media="(min-width:600px)">
+           <img src="logo.svg" alt="Mujer">
+        </picture>
     </section>
 </body>
 </html>
